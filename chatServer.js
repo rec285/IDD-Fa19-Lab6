@@ -30,7 +30,7 @@ io.on('connect', function(socket) {
   var questionNum = 0; // keep count of question, used for IF condition.
   socket.on('loaded', function() { // we wait until the client has loaded and contacted us that it is ready to go.
 
-    socket.emit('answer', "Hey, hello I am \"___*-\" a simple chat bot example."); //We start with the introduction;
+    socket.emit('answer', "Hey, hello I am KnockKnockBot, a simple joke bot."); //We start with the introduction;
     setTimeout(timedQuestion, 5000, socket, "What is your name?"); // Wait a moment and respond with a question.
 
   });
@@ -49,43 +49,149 @@ function bot(data, socket, questionNum) {
   var question;
   var waitTime;
 
+ // socket.emit('changeBG', 'white');
+ // socket.emit('changeFont', 'purple');
   /// These are the main statments that make up the conversation.
   if (questionNum == 0) {
     answer = 'Hello ' + input + ' :-)'; // output response
-    waitTime = 5000;
-    question = 'How old are you?'; // load next question
+    waitTime = 2000;
+    question = 'Knock Knock'; // load next question
   } else if (questionNum == 1) {
-    answer = 'Really, ' + input + ' years old? So that means you were born in: ' + (2018 - parseInt(input)); // output response
-    waitTime = 5000;
-    question = 'Where do you live?'; // load next question
-  } else if (questionNum == 2) {
-    answer = 'Cool! I have never been to ' + input + '.';
-    waitTime = 5000;
-    question = 'Whats your favorite color?'; // load next question
-  } else if (questionNum == 3) {
-    answer = 'Ok, ' + input + ' it is.';
-    socket.emit('changeBG', input.toLowerCase());
-    waitTime = 5000;
-    question = 'Can you still read the font?'; // load next question
-  } else if (questionNum == 4) {
-    if (input.toLowerCase() === 'yes' || input === 1) {
-      answer = 'Perfect!';
-      waitTime = 5000;
-      question = 'Whats your favorite place?';
-    } else if (input.toLowerCase() === 'no' || input === 0) {
-      socket.emit('changeFont', 'white'); /// we really should look up the inverse of what we said befor.
-      answer = ''
-      question = 'How about now?';
-      waitTime = 0;
-      questionNum--; // Here we go back in the question number this can end up in a loop
+    if (input.toLowerCase() === 'who\'s there?') {
+      answer = 'Cow Says';
+      waitTime =2000;
+      question = '?';
     } else {
-      question = 'Can you still read the font?'; // load next question
-      answer = 'I did not understand you. Could you please answer "yes" or "no"?'
+      question = 'Knock Knock'; // load next question
+      answer = 'Try again. This is a Knock Knock Joke!'
       questionNum--;
-      waitTime = 5000;
+      waitTime = 2000;
     }
-    // load next question
-  } else {
+  } else if (questionNum == 2) {
+    if (input.toLowerCase() === 'cow says who?') {
+      answer = 'Cow Says Moo!';
+      waitTime = 2000;
+      question = 'Knock Knock';
+    } else {
+      question = 'Cow Says'; // load next question
+      answer = 'Try again. This is a Knock Knock Joke!'
+      questionNum--;
+      waitTime = 2000;
+    }
+  }else if (questionNum == 3) {
+    if (input.toLowerCase() === 'who\'s there?') {
+      answer = 'Europe';
+      waitTime = 2000;
+      question = '?';
+    } else {
+      question = 'Knock Knock'; // load next question
+      answer = 'Try again. This is a Knock Knock Joke!'
+      questionNum--;
+      waitTime = 2000;
+    }
+  } else if (questionNum == 4) {
+    if (input.toLowerCase() === 'europe who?') {
+      answer = 'No I\'m not!';
+      waitTime = 2000;
+      question = 'Knock Knock';
+    } else {
+      question = 'Europe'; // load next question
+      answer = 'Try again. This is a Knock Knock Joke!'
+      questionNum--;
+      waitTime = 2000;
+    }
+  } else if (questionNum == 5) {
+    if (input.toLowerCase() === 'who\'s there?') {
+      answer = 'Mustache';
+      waitTime = 2000;
+      question = '?';
+    } else {
+      question = 'Knock Knock'; // load next question
+      answer = 'Try again. This is a Knock Knock Joke!'
+      questionNum--;
+      waitTime = 2000;
+    }
+  } else if (questionNum == 6) {
+    if (input.toLowerCase() === 'mustache who?') {
+      answer = 'I mustache you a question, but I’ll shave it for later.';
+      waitTime = 2000;
+      question = 'Knock Knock';
+    } else {
+      question = 'Mustache'; // load next question
+      answer = 'Try again. This is a Knock Knock Joke!'
+      questionNum--;
+      waitTime = 2000;
+    }
+  }else if (questionNum == 7) {
+    if (input.toLowerCase() === 'who\'s there?') {
+      answer = 'Boo';
+      waitTime = 2000;
+      question = '?';
+    } else {
+      question = 'Knock Knock'; // load next question
+      answer = 'Try again. This is a Knock Knock Joke!'
+      questionNum--;
+      waitTime = 2000;
+    }
+  } else if (questionNum == 8) {
+    if (input.toLowerCase() === 'boo who?') {
+      answer = 'No need to cry, it\'s only a joke!';
+      waitTime = 2000;
+      question = 'Knock Knock';
+    } else {
+      question = 'Boo'; // load next question
+      answer = 'Try again. This is a Knock Knock Joke!'
+      questionNum--;
+      waitTime = 2000;
+    }
+  }else if (questionNum == 9) {
+    if (input.toLowerCase() === 'who\'s there?') {
+      answer = 'Candice';
+      waitTime = 2000;
+      question = '?';
+    } else {
+      question = 'Knock Knock'; // load next question
+      answer = 'Try again. This is a Knock Knock Joke!'
+      questionNum--;
+      waitTime = 2000;
+    }
+  } else if (questionNum == 10) {
+    if (input.toLowerCase() === 'candice who?') {
+      answer = 'Candice door open, or what?';
+      waitTime = 2000;
+      question = 'Knock Knock';
+    } else {
+      question = 'Candice'; // load next question
+      answer = 'Try again. This is a Knock Knock Joke!'
+      questionNum--;
+      waitTime = 2000;
+    }
+  }
+   else if (questionNum == 11) {
+    if (input.toLowerCase() === 'who\'s there?') {
+      answer = 'Robin';
+      waitTime = 2000;
+      question = '?';
+    } else {
+      question = 'Knock Knock'; // load next question
+      answer = 'Try again. This is a Knock Knock Joke!'
+      questionNum--;
+      waitTime = 2000;
+    }
+  } else if (questionNum == 12) {
+    if (input.toLowerCase() === 'robin who?') {
+      answer = 'Robin YOU, now hand over the cash!';
+      waitTime = 2000;
+      question = 'Am I funny?';
+    } else {
+      question = 'Robin'; // load next question
+      answer = 'Try again. This is a Knock Knock Joke!'
+      questionNum--;
+      waitTime = 2000;
+    }
+  }
+
+   else {
     answer = 'I have nothing more to say!'; // output response
     waitTime = 0;
     question = '';
