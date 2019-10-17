@@ -10,9 +10,23 @@ To submit your lab, fork [this repository](https://github.com/FAR-Lab/IDD-Fa18-L
 
 **Describe what changes you made to the baseline chatbot here. Don't forget to push your modified code to this repository.**
 
+I modified the chat bot to tell Knock Knock jokes in the format of:
+
+```
+Bot: "Knock Knock"
+User: "Who's there?"
+Bot: X
+Bot: "?"
+User: X + "who?"
+Bot: Punchline
+```
+
+If the user enters the incorrect response, the bot will prompt the user again until they follow the correct Knock Knock joke format. I also edited the css file to change the color scheme and made the response time shorter so the user doesn't have to wait as long for the jokes.
+
 ## Record someone trying out your ChatBot
 
 **Using a phone or other video device, record someone trying out your ChatBot. Upload that video to this repository and link to it here!**
+
 [Link to Video](https://youtu.be/VqIxH71sb6Y)
 
 ---
