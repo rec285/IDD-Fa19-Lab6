@@ -12,7 +12,7 @@ var serverPort = 8000;
 var router = express.Router();
 
 router.post('/requestDrink', function(req,res) {
-	console.log(req.body);
+	console.log(req);
 });
 
 //---------------------- WEBAPP SERVER SETUP ---------------------------------//
