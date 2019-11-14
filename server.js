@@ -9,7 +9,11 @@ var app = express(); // webapp
 var http = require('http').Server(app); // connects http library to server
 var io = require('socket.io')(http); // connect websocket library to server
 var serverPort = 8000;
+var router = express.Router();
 
+router.post('/requestDrink', function(req,res) {
+	console.log(req.body);
+});
 
 //---------------------- WEBAPP SERVER SETUP ---------------------------------//
 // use express to create the simple webapp
