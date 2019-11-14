@@ -18,7 +18,7 @@ router.post('/requestDrink', function(req,res) {
 //---------------------- WEBAPP SERVER SETUP ---------------------------------//
 // use express to create the simple webapp
 app.use(express.static('public')); // find pages in public directory
-
+app.use('/api',router);
 // start the server and say what port it is on
 http.listen(serverPort, function() {
   console.log('listening on *:%s', serverPort);
