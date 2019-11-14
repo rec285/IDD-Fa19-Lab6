@@ -10,15 +10,20 @@ var http = require('http').Server(app); // connects http library to server
 var io = require('socket.io')(http); // connect websocket library to server
 var serverPort = 8000;
 var router = express.Router();
-
+var bodyParser = require('body-parser');
+var morgan = require('morgan');
 router.post('/requestDrink', function(req,res) {
-	console.log(req);
+	console.log(req.body);
 });
 
 //---------------------- WEBAPP SERVER SETUP ---------------------------------//
+app.use(morgan('dev'));
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
 // use express to create the simple webapp
 app.use(express.static('public')); // find pages in public directory
 app.use('/api',router);
+
 // start the server and say what port it is on
 http.listen(serverPort, function() {
   console.log('listening on *:%s', serverPort);
